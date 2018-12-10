@@ -92,6 +92,7 @@
     <ClCompile Include="j1Window.cpp" />
     <ClCompile Include="PugiXml\src\pugixml.cpp" />
     <ClCompile Include="UI_Element.cpp" />
+    <ClCompile Include="UI_Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="j1Fonts.h" />
@@ -117,6 +118,7 @@
     <ClInclude Include="PugiXml\src\pugiconfig.hpp" />
     <ClInclude Include="PugiXml\src\pugixml.hpp" />
     <ClInclude Include="UI_Element.h" />
+    <ClInclude Include="UI_Sprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
