@@ -6,13 +6,18 @@
 class UI_Sprite : public UI_Element
 {
 public:
-	UI_Sprite(iPoint pos, j1Module* callback);
+	UI_Sprite(SDL_Texture* tex, SDL_Rect* texSection, iPoint pos, j1Module* callback);
 	virtual ~UI_Sprite();
+
+	virtual bool Update();
+
+private:
 
 	virtual void Draw();
 
 protected:
 	SDL_Texture* tex;
+	SDL_Rect* texSection;
 };
 
 #endif //_UI_WINDOW_

@@ -22,11 +22,13 @@ public:
 	UI_Element(UiElemType type, iPoint pos, j1Module* callback);
 	virtual ~UI_Element();
 
-	virtual bool PreUpdate(float d_time) { return true; };
-	virtual bool Update(float d_time) { return true; };
+	virtual bool PreUpdate() { return true; };
+	virtual bool Update() { return true; };
 	virtual bool CleanUp() { return true; };
+
+private:
+
 	virtual void Draw() { return; };
-	virtual void SetArea(uint w, uint h) { return; };
 
 public:
 

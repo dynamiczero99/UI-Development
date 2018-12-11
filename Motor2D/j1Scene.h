@@ -4,7 +4,7 @@
 #include "j1Module.h"
 
 struct SDL_Texture;
-class GuiImage;
+class UI_Sprite;
 class GuiText;
 
 class j1Scene : public j1Module
@@ -36,7 +36,8 @@ public:
 
 private:
 	SDL_Texture* debug_tex;
-	GuiImage* banner;
+	UI_Sprite* banner = nullptr;
+	SDL_Rect* sect = nullptr;
 	GuiText* text;
 };
 

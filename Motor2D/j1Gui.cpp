@@ -38,6 +38,17 @@ bool j1Gui::Start()
 // Update all guis
 bool j1Gui::PreUpdate()
 {
+	for (p2List_item<UI_Element*>* iterator = uiList.start; iterator; iterator = iterator->next)
+	{
+		iterator->data->Update();
+	}
+	return true;
+}
+
+bool j1Gui::Update(float dt)
+{
+	
+
 	return true;
 }
 
@@ -53,6 +64,22 @@ bool j1Gui::CleanUp()
 	LOG("Freeing GUI");
 
 	return true;
+}
+
+UI_Element * j1Gui::CreateUIElement(UiElemType type, iPoint position, j1Module * callback, SDL_Rect* texSection)
+{
+	UI_Element* ret = nullptr;
+
+	switch (type)
+	{
+	case SPRITE:
+		ret = new UI_Sprite(atlas, texSection, position, callback);
+	}
+
+	if (ret != nullptr)
+	uiList.add(ret);
+
+	return ret;
 }
 
 // const getter for atlas

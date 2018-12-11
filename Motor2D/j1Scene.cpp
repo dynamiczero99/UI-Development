@@ -45,6 +45,9 @@ bool j1Scene::Start()
 	debug_tex = App->tex->Load("maps/path2.png");
 
 	// TODO 3: Create the banner (rect {485, 829, 328, 103}) and the text "Hello World"
+	
+	sect = new SDL_Rect({ 485, 829, 328, 103 });
+	banner = (UI_Sprite*)App->gui->CreateUIElement(SPRITE, { 50, 50 }, this, sect);
 
 	return true;
 }
@@ -83,7 +86,7 @@ bool j1Scene::PreUpdate()
 bool j1Scene::Update(float dt)
 {
 	// Gui ---
-	
+	banner->Update();
 	// -------
 	if(App->input->GetKey(SDL_SCANCODE_L) == KEY_DOWN)
 		App->LoadGame("save_game.xml");
